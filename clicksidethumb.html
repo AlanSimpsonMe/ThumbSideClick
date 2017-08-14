@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- Sample CSS HTML thumbnail gallery by Alan Simpson 
+			On this one you have to click the thumbnail to the left. 
+		From https://AlanSimpson.me/pages/cq -->
+
+
+<html>
+
+<head>
+	<title>Thumbnail Gallery</title>
+	<style type="text/css">
+		/* Entire gallery */
+		.gallery {
+			position: relative;
+		}
+		
+		/* Smaller divs  */
+		.gallery div {
+			padding: 2px;
+			width: 120px;
+		}
+		
+		/* The first image is actually an input so we can later use :focus */
+		.gallery div input {
+			width: 100px;
+		}
+		/* The img is the large version of the image to the right of the thumbnail */
+		.gallery div img {
+			position: absolute;
+			top: 10px;
+			left: 120px;
+			z-index: 10;
+			visibility: hidden;
+		}
+		/* When input thumb has focus, next (large) image is visible */
+		.gallery div input:focus+img {
+			visibility: visible;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Thumbnail gallery</h1>
+	<p>Click or tap any small image to see a larger version.</p>
+	<div class="gallery">
+		<!-- Put two of each image in its own div inside the gallery div -->
+		<div>
+			<input type="image" src="flower01.png">
+			<img src="flower01.png" alt="">
+		</div>
+		<div>
+			<input type="image" src="flower02.png">
+			<img src="flower02.png" alt="">
+		</div>
+		<div>
+			<input type="image" src="flower03.png">
+			<img src="flower03.png" alt="">
+		</div>
+		<div>
+			<input type="image" src="flower04.png">
+			<img src="flower04.png" alt="">
+		</div>
+		<div>
+			<input type="image" src="flower05.png">
+			<img src="flower05.png" alt="">
+		</div>
+	</div>
+	<!-- End gallery -->
+
+</body>
+</html>
